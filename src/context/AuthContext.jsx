@@ -25,13 +25,13 @@ export default function AuthProvider({ children }) {
   const signup = async (email, password, name) => {
     await account.create('unique()', email, password, name);
     // auto-login after signup (optional)
-    await account.createEmailSession(email, password);
+    await account.createEmailPasswordSession(email, password);
     const me = await account.get();
     setUser(me);
   };
 
   const login = async (email, password) => {
-    await account.createEmailSession(email, password);
+    await account.createEmailPasswordSession(email, password);
     const me = await account.get();
     setUser(me);
   };
