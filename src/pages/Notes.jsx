@@ -11,7 +11,7 @@ const Notes = () => {
   const fetchFiles = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/files");
+  const res = await axios.get(`${import.meta.env.VITE_API_URL}/files`);
       setFiles(res.data.files || []);
     } catch (err) {
       console.error("Error fetching files:", err);
@@ -36,7 +36,7 @@ const Notes = () => {
 
     setUploading(true);
     try {
-      await axios.post("http://localhost:5000/upload", formData, {
+  await axios.post(`${import.meta.env.VITE_API_URL}/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       fetchFiles(); // Refresh list after upload
