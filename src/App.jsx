@@ -8,6 +8,7 @@ import LostFound from './pages/LostFound';
 import UploadDemo from './pages/UploadDemo';
 import ProtectedRoute from './routes/ProtectedRoute';
 import { useAuth } from './context/AuthContext';
+import Notes from './pages/Notes';
 
 export default function App() {
   const { user } = useAuth();
@@ -38,12 +39,8 @@ export default function App() {
             </ProtectedRoute>}
           />
           <Route
-            path="/pyq"
-            element={<ProtectedRoute>
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-                <h2 className="text-2xl font-bold">PYQ Zone Coming Soon</h2>
-              </div>
-            </ProtectedRoute>}
+            path="/notes"
+            element={<ProtectedRoute><Notes /></ProtectedRoute>}
           />
 
           {/* Storage demo */}

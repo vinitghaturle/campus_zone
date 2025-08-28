@@ -31,7 +31,7 @@ export default function Navigation() {
           <NavLink to="/dashboard" className={linkClass}>Dashboard</NavLink>
           <NavLink to="/lostfound" className={linkClass}>Lost &amp; Found</NavLink>
           <NavLink to="/events" className={linkClass}>Events</NavLink>
-          <NavLink to="/pyq" className={linkClass}>PYQ Zone</NavLink>
+          <NavLink to="/notes" className={linkClass}>PYQ Zone</NavLink>
           <NavLink to="/upload-demo" className={linkClass}>Upload Demo</NavLink>
         </div>
 
